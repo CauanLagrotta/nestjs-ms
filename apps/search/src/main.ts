@@ -7,7 +7,7 @@ async function bootstrap() {
   process.title = "Search";
   const logger = new Logger("SearchBootstrap");
 
-  const rmqUrl = process.env.RABBITMQ_URL ?? "amqp://localhost:5672";
+  const rmqUrl = process.env.RABBITMQ_URL ?? "amqp://guest:guest@localhost:5672";
   const queue = process.env.SEARCH_QUEUE ?? "search_queue";
 
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
